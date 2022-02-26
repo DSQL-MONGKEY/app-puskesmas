@@ -28,19 +28,19 @@
         @enderror
     </div>
     <div class="form-group bg-gray-200 rounded-md p-2 px-2 mb-2">
-        <label for="operationDayId" class="block text-gray-500 font-semibold">Hari Operasional</label>
-        <select name="operation_day_id" id="operationDayId" wire:model="operationsDayId" class="p-2 rounded w-full text-base border-transparent focus:border-transparent focus:ring-0">
+        <label for="operationsDayId" class="block text-gray-500 font-semibold">Hari Operasional</label>
+        <select name="operations_day_id" id="operationsDayId" wire:model="operationsDayId" class="p-2 rounded w-full text-base border-transparent focus:border-transparent focus:ring-0">
             @foreach ($operationsDays as $key => $operationsDay)
                 <option value="{{ $operationsDay->id }}">{{ $operationsDay->day }}</option>
             @endforeach
         </select>
-        @error('operation_day_id')
+        @error('operations_day_id')
         <p class="text-sm italic font-medium text-red-600">{{ $message }}</p>
         @enderror
     </div>
     <div class="form-group bg-gray-200 rounded-md p-2 px-2 mb-2">
         <label for="operationId" class="block text-gray-500 font-semibold">Jam Operasional</label>
-        <select name="operation_id" id="operationId" wire:model="operationId" class="rounded w-full p-2 text-base border-transparent focus:border-transparent focus:ring-0">
+        <select name="operations_id" id="operationId" wire:model="operationId" class="rounded w-full p-2 text-base border-transparent focus:border-transparent focus:ring-0">
             @foreach ($operations as $key => $operation)
                 <option value="{{ $operation->id }}">{{ $operation->open_at.'-'.$operation->closed_at }}</option>
             @endforeach

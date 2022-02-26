@@ -11,6 +11,7 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/scout": "^9.4",
         "laravel/tinker": "^2.7",
+        "mediconesystems/livewire-datatables": "dev-l9-compatibility",
         "livewire/livewire": "^2.10"
     },
     "require-dev": {
@@ -21,6 +22,12 @@
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/laravel-shift/livewire-datatables.git"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/",

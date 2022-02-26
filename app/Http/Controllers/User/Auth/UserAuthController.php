@@ -55,6 +55,9 @@ class UserAuthController extends Controller
         return redirect('/auth/login')->with('successRegister','Berhasil register');
     }
     public function logout(){
-
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect()->route('login');
     }
 }

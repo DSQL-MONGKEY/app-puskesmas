@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\User\Auth\UserAuthController;
-use App\Http\Controllers\User\Queue\UserRegisterQueueController;
+use App\Http\Controllers\User\Queue\UserQueueController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,10 +24,12 @@ Route::controller(UserAuthController::class)->prefix('/auth')->group(function(){
     Route::post('/login','login');
     Route::get('/register','showRegister');
     Route::post('/register','register');
+    Route::post('/logout','logout');
 });
 // Queue
-Route::controller(UserRegisterQueueController::class)->prefix('/queue')->group(function(){
+Route::controller(UserQueueController::class)->prefix('/queue')->group(function(){
     Route::get('/','index');
-    Route::get('/add','addQueue');
+    Route::get('/add','create');
+    Route::post('/add','store');
 });
 
