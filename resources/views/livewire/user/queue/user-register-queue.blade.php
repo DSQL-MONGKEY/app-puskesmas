@@ -38,17 +38,6 @@
         <p class="text-sm italic font-medium text-red-600">{{ $message }}</p>
         @enderror
     </div>
-    <div class="form-group bg-gray-200 rounded-md p-2 px-2 mb-2">
-        <label for="operationId" class="block text-gray-500 font-semibold">Jam Operasional</label>
-        <select name="operations_id" id="operationId" wire:model="operationId" class="rounded w-full p-2 text-base border-transparent focus:border-transparent focus:ring-0">
-            @foreach ($operations as $key => $operation)
-                <option value="{{ $operation->id }}">{{ $operation->open_at.'-'.$operation->closed_at }}</option>
-            @endforeach
-        </select>
-        @error('operation_id')
-        <p class="text-sm italic font-medium text-red-600">{{ $message }}</p>
-        @enderror
-    </div>
     @if (auth()->user()->nomor_bpjs == null)
     <div class="form-group bg-gray-200 font-medium text-gray-900 rounded-md p-3 mb-2">
         *Anda akan diperiksa dalam status pembayaran pribadi dan tidak menggunakan bpjs, jika ingin menggunakan bpjs, silahkan update data anda dibagian profile!

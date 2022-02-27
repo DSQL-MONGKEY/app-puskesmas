@@ -15,8 +15,6 @@ class Doctor extends Model
         return [
             'name'=>$this->name,
             'username'=>$this->username,
-            'email'=>$this->email,
-            'gender'=>$this->gender,
             'nip'=>$this->nip,
             'polies_id'=>$this->polies_id
         ];

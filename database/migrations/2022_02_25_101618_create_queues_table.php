@@ -24,8 +24,12 @@ return new class extends Migration
             $table->foreignIdFor(Doctor::class)->nullable();
             $table->foreignIdFor(Polies::class)->nullable();
             $table->foreignIdFor(OperationsDay::class)->nullable();
-            $table->foreignIdFor(Operation::class)->nullable();
-            $table->timestamp('date');
+            $table->date('date_visit');
+            $table->time('open_at');
+            $table->time('closed_at');
+            $table->uuid('slug')->unique();
+            $table->enum('status',['pending','in calling','done'])->default('pending');
+            $table->enum('payment',['bpjs','cash'])->default('bpjs');
             $table->integer('queueing_number', false, true)->nullable();
             $table->timestamps();
         });

@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(OperationsSeeder::class);
         $this->call(OperationsDaysSeeder::class);
         $this->call(DoctorSeeder::class);
-        $this->call(DetailOperationsDoctorSeeder::class);
         $this->call(DetailOperationsPoliesSeeder::class);
+        $this->call(AdminSeeder::class);
     }
 }

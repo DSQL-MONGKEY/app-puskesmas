@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\Auth\AdminAuthController;
+use App\Http\Controllers\Admin\Dashboard\AdminDashboardController;
 use App\Http\Controllers\User\Auth\UserAuthController;
 use App\Http\Controllers\User\Queue\UserQueueController;
+use App\Models\Queue;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +21,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Admin Auth
+Route::controller(AdminAuthController::class)->prefix('/auth')->group(function(){
+    Route::get('/admin/login', 'showLogin');
+    Route::post('/admin/login', 'login');
+    Route::post('/admin/logout', 'logout');
+});
+// Admin Dashboard
+Route::controller(AdminDashboardController::class)->prefix('/dashboard')->group(function(){
+    Route::get('/','index');
+});
 // Auth
 Route::controller(UserAuthController::class)->prefix('/auth')->group(function(){
     Route::get('/login','showLogin')->name('login');
@@ -31,5 +44,8 @@ Route::controller(UserQueueController::class)->prefix('/queue')->group(function(
     Route::get('/','index');
     Route::get('/add','create');
     Route::post('/add','store');
+    Route::get('/coba',function(){
+        return json_encode(Queue::first()->datetime);
+    });
 });
 
