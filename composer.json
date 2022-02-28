@@ -6,13 +6,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "diglactic/laravel-breadcrumbs": "^7.1",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/scout": "^9.4",
         "laravel/tinker": "^2.7",
-        "mediconesystems/livewire-datatables": "dev-l9-compatibility",
-        "livewire/livewire": "^2.10"
+        "livewire/livewire": "^2.10",
+        "mediconesystems/livewire-datatables": "dev-l9-compatibility"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

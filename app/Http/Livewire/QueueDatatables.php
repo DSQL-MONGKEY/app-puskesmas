@@ -24,7 +24,6 @@ class QueueDatatables extends LivewireDatatable
 
     public function columns()
     {
-        //
         return [
             Column::name('users.name')
             ->label('Nama pasien')

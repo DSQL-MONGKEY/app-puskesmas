@@ -30,6 +30,11 @@ Route::controller(AdminAuthController::class)->prefix('/auth')->group(function()
 // Admin Dashboard
 Route::controller(AdminDashboardController::class)->prefix('/dashboard')->group(function(){
     Route::get('/','index');
+    Route::get('/queue','queue');
+    Route::get('/queue/{queue:slug}','showQueue');
+});
+Route::get('/admin/layouts',function(){
+    return view('admin.layouts.app');
 });
 // Auth
 Route::controller(UserAuthController::class)->prefix('/auth')->group(function(){

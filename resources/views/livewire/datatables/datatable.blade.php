@@ -8,7 +8,7 @@
         <div class="flex justify-between items-center mb-1">
             <div class="h-10 flex items-center">
                 @if($this->searchableColumns()->count())
-                <div class="w-96 flex rounded-lg shadow-sm">
+                <div class="w-96 flex rounded-lg shadow-sm mb-3">
                     <div class="relative flex-grow focus-within:z-10">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" stroke="currentColor" fill="none">
@@ -74,7 +74,7 @@
         </div>
         @endif
 
-        <div wire:loading.class="opacity-50" class="rounded-lg @unless($complex || $this->hidePagination) rounded-b-none @endunless shadow-lg bg-white max-w-screen overflow-x-scroll border-4 @if($this->activeFilters) border-blue-500 @else border-transparent @endif @if($complex) rounded-b-none border-b-0 @endif">
+        <div wire:loading.class="opacity-50" class="rounded-lg @unless($complex || $this->hidePagination) rounded-b-none @endunless shadow-sm bg-white max-w-screen overflow-x-scroll border-4 @if($this->activeFilters) border-blue-500 @else border-transparent @endif @if($complex) rounded-b-none border-b-0 @endif">
             <div>
                 <div class="table align-middle min-w-full">
                     @unless($this->hideHeader)
@@ -164,7 +164,7 @@
                     {{-- check if there is any data --}}
                     @if(count($this->results))
                         <div class="my-2 sm:my-0 flex items-center">
-                            <select name="perPage" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5" wire:model="perPage">
+                            <select name="perPage" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border rounded border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5" wire:model="perPage">
                                 @foreach(config('livewire-datatables.per_page_options', [ 10, 25, 50, 100 ]) as $per_page_option)
                                     <option value="{{ $per_page_option }}">{{ $per_page_option }}</option>
                                 @endforeach
