@@ -2,15 +2,19 @@
 
 namespace App\Http\Livewire\Admin\Queue;
 
+use App\Models\Queue;
 use Livewire\Component;
 
 class DashboardQueueAction extends Component
 {
-    public $status;
-    public $slug;
+    public $queue;
+    public $statusIsChange = false;
+    
     public function render()
     {
-        dd($this->status, $this->slug);
+        if($this->queue->status == 'in calling'){
+            $this->statusIsChange = true;
+        }
         return view('livewire.admin.queue.dashboard-queue-action');
     }
 }

@@ -10,6 +10,8 @@
     <meta name="author" content="">
 
     <title>{{ $title }}</title>
+    <livewire:styles/>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,7 +21,7 @@
 
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
-    <livewire:styles/>
+    <script src="https://kit.fontawesome.com/43727f9558.js" crossorigin="anonymous"></script>
 
 </head>
 

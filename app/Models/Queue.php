@@ -9,7 +9,16 @@ class Queue extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    protected $casts = [
-        'datetime'=>'array'
-    ];
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+    public function polies(){
+        return $this->belongsTo(Polies::class);
+    }
+    public function doctor(){
+        return $this->belongsTo(Doctor::class);
+    }
+    public function operations_day(){
+        return $this->belongsTo(OperationsDay::class);
+    }
 }
